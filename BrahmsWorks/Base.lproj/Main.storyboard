@@ -1,24 +1,228 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BrahmsWorks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sym1" translatesAutoresizingMaskIntoConstraints="NO" id="GyC-hF-qsa" userLabel="worksImageView">
+                                <rect key="frame" x="100" y="64" width="214" height="214"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GyC-hF-qsa" secondAttribute="height" multiplier="1:1" id="Bn3-E4-Y9I"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MIN-jd-cJ0" appends="YES" id="2X7-eP-FGH"/>
+                                </connections>
+                            </imageView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="Abs-qO-0dV" userLabel="pageControl">
+                                <rect key="frame" x="137" y="288" width="140" height="26.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="OIv-FQ-6Kv"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" systemColor="separatorColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemBlueColor"/>
+                                <connections>
+                                    <action selector="pageChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="v8G-3K-bIb"/>
+                                </connections>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eOI-34-5uK">
+                                <rect key="frame" x="132" y="794.66666666666663" width="30" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="InL-pp-m3O"/>
+                                    <constraint firstAttribute="height" constant="30" id="f89-vr-P7F"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="arrowtriangle.backward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="PreviousBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXC-nG-Yrd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRR-y1-7U0">
+                                <rect key="frame" x="252" y="794.66666666666663" width="30" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="0G0-R3-Aiq"/>
+                                    <constraint firstAttribute="height" constant="30" id="Xpi-Xf-XeG"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="arrowtriangle.forward.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="nextBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OtI-TQ-4nS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Symphony No. 1 in C minor, Op. 68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Xb-i9-0bg" userLabel="worksLabel">
+                                <rect key="frame" x="54.666666666666657" y="395.33333333333331" width="304.66666666666674" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLl-FK-Zw0" userLabel="introTextView">
+                                <rect key="frame" x="40" y="428.33333333333326" width="334" height="290"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="js6-Vn-qLO"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">The Symphony No. 1 in C minor, Op. 68, is a symphony written by Johannes Brahms. Brahms spent at least fourteen years completing this work, whose sketches date from 1854. Brahms himself declared that the symphony, from sketches to finishing touches, took 21 years, from 1855 to 1876. The premiere of this symphony, conducted by the composer's friend Felix Otto Dessoff, occurred on 4 November 1876, in Karlsruhe, then in the Grand Duchy of Baden. A typical performance lasts between 45 and 50 minutes.</string>
+                                        <attributes>
+                                            <color key="NSColor" systemColor="labelColor"/>
+                                            <font key="NSFont" size="15.5" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Eg6-Rc-s6Q" userLabel="segmentControl">
+                                <rect key="frame" x="75.666666666666686" y="324.33333333333331" width="263" height="32"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="Third"/>
+                                    <segment title="Fourth"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="sKP-YV-AF9"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeX-HG-4QO" userLabel="autoPlayBtn" customClass="FancyButton" customModule="BrahmsWorks" customModuleProvider="target">
+                                <rect key="frame" x="147" y="733" width="120" height="32"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="3Fx-3h-KwE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Auto Play">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLeftPadding">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleRightPadding">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.3294117647" green="0.54901960780000003" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTopPadding">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleBottomPadding">
+                                        <real key="value" value="9"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="autoPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hIB-09-NB5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gt-Gx-FSz" userLabel="pageLabel">
+                                <rect key="frame" x="197" y="795" width="20" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="cy9-b6-a8o"/>
+                                    <constraint firstAttribute="width" constant="20" id="w0V-6C-4mk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="dLl-FK-Zw0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="12W-Gz-yKs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GyC-hF-qsa" secondAttribute="trailing" constant="100" id="13d-tJ-4ue"/>
+                            <constraint firstItem="9gt-Gx-FSz" firstAttribute="leading" secondItem="eOI-34-5uK" secondAttribute="trailing" constant="35" id="2VG-Ie-nUW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LRR-y1-7U0" secondAttribute="bottom" constant="40" id="3vY-g4-bTd"/>
+                            <constraint firstItem="Eg6-Rc-s6Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9XR-gE-dGL"/>
+                            <constraint firstItem="Abs-qO-0dV" firstAttribute="top" secondItem="GyC-hF-qsa" secondAttribute="bottom" constant="10" id="APH-7r-w2V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9gt-Gx-FSz" secondAttribute="bottom" constant="43" id="ETo-aU-9Fx"/>
+                            <constraint firstItem="GyC-hF-qsa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Fpu-oB-Se0"/>
+                            <constraint firstItem="1Xb-i9-0bg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KIB-O1-Hci"/>
+                            <constraint firstItem="9gt-Gx-FSz" firstAttribute="top" secondItem="DeX-HG-4QO" secondAttribute="bottom" constant="30" id="MSf-K3-wcb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dLl-FK-Zw0" secondAttribute="trailing" constant="40" id="U8J-L7-Dgf"/>
+                            <constraint firstItem="9gt-Gx-FSz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X83-YT-P3l"/>
+                            <constraint firstItem="DeX-HG-4QO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z4d-ef-NGX"/>
+                            <constraint firstItem="LRR-y1-7U0" firstAttribute="leading" secondItem="9gt-Gx-FSz" secondAttribute="trailing" constant="35" id="keQ-NF-T9S"/>
+                            <constraint firstItem="GyC-hF-qsa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="llq-Rv-b1W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eOI-34-5uK" secondAttribute="bottom" constant="40" id="pry-72-R9X"/>
+                            <constraint firstItem="Abs-qO-0dV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pzy-OA-dco"/>
+                            <constraint firstItem="Eg6-Rc-s6Q" firstAttribute="top" secondItem="Abs-qO-0dV" secondAttribute="bottom" constant="10" id="qd3-8y-Ljb"/>
+                            <constraint firstItem="1Xb-i9-0bg" firstAttribute="top" secondItem="Eg6-Rc-s6Q" secondAttribute="bottom" constant="40" id="qpO-FZ-vQY"/>
+                            <constraint firstItem="dLl-FK-Zw0" firstAttribute="top" secondItem="1Xb-i9-0bg" secondAttribute="bottom" constant="10" id="w8b-Rk-oUf"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="gNM-n1-7IA" appends="YES" id="k5a-xA-LSn"/>
+                            <outletCollection property="gestureRecognizers" destination="nUg-5u-C1s" appends="YES" id="Zzz-my-6d5"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="autoPlayBtn" destination="DeX-HG-4QO" id="tQz-Sz-FQa"/>
+                        <outlet property="introTextView" destination="dLl-FK-Zw0" id="e1U-Av-AGC"/>
+                        <outlet property="pageControl" destination="Abs-qO-0dV" id="MHx-J0-kqN"/>
+                        <outlet property="pageLabel" destination="9gt-Gx-FSz" id="8Eq-dF-7po"/>
+                        <outlet property="segmentControl" destination="Eg6-Rc-s6Q" id="BcP-1c-yzI"/>
+                        <outlet property="worksImageView" destination="GyC-hF-qsa" id="nAg-dt-5XO"/>
+                        <outlet property="worksLabel" destination="1Xb-i9-0bg" id="06b-sG-OmM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="gNM-n1-7IA">
+                    <connections>
+                        <action selector="swipeChange:" destination="BYZ-38-t0r" id="kJh-zw-DoV"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="nUg-5u-C1s">
+                    <connections>
+                        <action selector="swipeChange:" destination="BYZ-38-t0r" id="dQN-Ms-nJY"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="MIN-jd-cJ0">
+                    <connections>
+                        <action selector="showRandom:" destination="BYZ-38-t0r" id="tFf-Lf-ecC"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="70.982142857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
+        <image name="arrowtriangle.forward.fill" catalog="system" width="128" height="113"/>
+        <image name="sym1" width="1000" height="1000"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
